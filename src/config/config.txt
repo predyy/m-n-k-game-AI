@@ -1,0 +1,62 @@
+board = {
+    "size": 5
+}
+
+agents = {
+    "random": {
+        "knowsEnemyStrategy": False,
+        "openeningMoves": [],
+        "randomVariation": True,
+        "scores": {
+            "everyAdjecent": 0,
+            "openTwo": 0,
+            "openThree": 0,
+            "openFour": 0,            
+            "square": 0,
+            "openTwoMultiplier": 1,
+            "openThreeMultiplier": 1,
+        }        
+    },
+    "simple": {
+        "knowsEnemyStrategy": False,
+        "openeningMoves": [ [board["size"]*board["size"]//2, board["size"]*board["size"]//2], [board["size"]*board["size"]//2, 0], [0, 0] ],
+        "randomVariation": True,
+        "scores": {
+            "everyAdjecent": 0,
+            "openTwo": 10,
+            "openThree": 100,
+            "openFour": 1000,            
+            "square": 15,
+            "openTwoMultiplier": 1,
+            "openThreeMultiplier": 2,
+        }        
+    },
+    "cluster": {
+        "knowsEnemyStrategy": False,
+        "openeningMoves": [ [board["size"]*board["size"]//2, board["size"]*board["size"]//2], [board["size"]*board["size"]//2, 0], [0, 0] ],
+        "randomVariation": True,
+        "scores": {
+            "everyAdjecent": 10,
+            "openTwo": 0,
+            "openThree": 0,
+            "openFour": 1000,            
+            "square": 100,
+            "openTwoMultiplier": 2,
+            "openThreeMultiplier": 2,
+        }        
+    },
+    "spread": {
+        "knowsEnemyStrategy": False,
+        "openeningMoves": [ [board["size"]*board["size"]//2, board["size"]*board["size"]//2], [board["size"]*board["size"]//2, 0], [0, 0] ],
+        "randomVariation": True,
+        "scores": {
+            "everyAdjecent": -10,
+            "openTwo": 0,
+            "openThree": 0,
+            "openFour": 1000,            
+            "square": 0,
+            "openTwoMultiplier": 0,
+            "openThreeMultiplier": 0,
+        } 
+    }   
+}
