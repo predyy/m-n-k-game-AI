@@ -20,5 +20,5 @@ Game is played by first getting agent move `getAgentMove()`,  then playing it by
 We trust first agent to count combinations correctly and if one is greater than `winningSize` we consider game over.
 
 ## Creating new game after finish
-New game is created as new object, agents memory is cleared by `forget()` method. All is done in driver code.
+New game is created by setting `board` to array of `[0]` and agents memory is cleared by `forget()` method. All is done in driver code.
 

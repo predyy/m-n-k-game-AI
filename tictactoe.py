@@ -10,6 +10,9 @@ with open(os.path.join(os.path.dirname(__file__), "./src/config/config.json")) a
 agents = config["agents"]
 
 while len(agents) > 1:
+    #Each agent playes with each, after agent playes with every one we don't have to
+    #consider him for other matches.
+
     pivotAgent = agents.pop()
     print(pivotAgent)
 
@@ -25,6 +28,7 @@ while len(agents) > 1:
             config["printMoves"])
 
         while game.totalGames > game.playedGames:
+            #Play all games between two agents
             game.playAgentMove()
         
         print(game.scores)
