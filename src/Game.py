@@ -1,5 +1,5 @@
 class Game:
-    def __init__(self, boardSizeX, boardSizeY, winningSize, totalGames, agent1, agent2, print):
+    def __init__(self, boardSizeX, boardSizeY, winningSize, totalGames, agent1, agent2, endTurnPrint):
             self.board = [0] * boardSizeX * boardSizeY
             self.boardSize = [boardSizeX, boardSizeY]
             self.playedGames = 0
@@ -8,10 +8,8 @@ class Game:
             self.agents = [agent1, agent2]
             self.winningSize = winningSize
             self.scores = [0, 0]
-            self.endTurnPrint = print
+            self.endTurnPrint = endTurnPrint
             
-
-
     def playAgentMove(self):
         move = self.getAgentMove()
         self.playMove(move[0], move[1])
@@ -27,8 +25,8 @@ class Game:
 
             for i in range(0, len(self.agents)):
                 self.agents[i].newMovePlayed(self.board)
-            if (self.print):
-                self.print()
+            if (self.endTurnPrint):
+                self.printBoard()
             self.endTurn()
 
     def endTurn(self):
@@ -42,7 +40,6 @@ class Game:
         if (playerWin == -1):
             self.scores[1] += 1
 
-        #print(playerWin)
         if (self.playedGames < self.totalGames):
             self.board = [0] * self.boardSize[0] * self.boardSize[1]
             self.playerTurn = 1
@@ -72,7 +69,7 @@ class Game:
         if (boardIsFull):
             self.handleWin(0)
 
-    def print(self):
+    def printBoard(self):
         print("---------")
         for i in range(0, self.boardSize[1]):            
             printRow = []

@@ -1,0 +1,12 @@
+{
+    "board": [15, 15],
+    "winningSize": 5,
+    "totalGames": 10,
+    "agents": [
+        {"name": "Simple", "scoring": [1, 10, 100, 1000], "restrictMoves": 10},
+        {"name": "Spread", "scoring": [1000, 10, 10, 10], "restrictMoves": 10},
+        {"name": "Cluster", "scoring": [-1000, 10, 10, 10], "restrictMoves": 10},
+        {"name": "Base", "scoring": [0, 0, 0, 0], "restrictMoves": 10}
+    ],
+    "printMoves": false
+}

@@ -55,6 +55,9 @@ class Agent:
         self.memory["lastBoardState"] = boardState.copy()
 
     def countSequences(self, playerOneSequences, playerTwoSequences, boardStateOld, boardStateNew, move):
+        #Sequence counting is done by first counting incident sequences on old board, subtracting 
+        #them from total and then adding new sequences from new board.
+        
         playerOne = playerOneSequences.copy()
         playerTwo = playerTwoSequences.copy()
 
@@ -306,7 +309,7 @@ class Agent:
             nextStates[i]["sequences"] = self.countSequences(state["sequences"][0], state["sequences"][1], state["boardState"], nextStates[i]["boardState"], nextStates[i]["lastMove"])
             nextStates[i]["evaluation"] = self.evaluate(nextStates[i])
 
-        #Make job of alpha-beta easier by ordering from best/worst move
+        #Make job of alpha-beta easier by ordering from best/worst move and restricing number of checked moves
         sortedStates = sorted(nextStates, key=lambda k: k['evaluation'], reverse=(player == self.playerNumber))
         return( sortedStates[0:self.restrictMoves] )
 
