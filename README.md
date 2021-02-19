@@ -23,7 +23,7 @@ All cofiguration is provided in config.json.
 | totalGames | int | Number of games to be played between every pair of agents |
 | agents | Array[Object] | Definition of agents |
 | agents[name] | String | Name of agent |
-| agents[heuristic] | Array[int] | Scoring of combitation explained below |
+| agents[scoring] | Array[int] | Scoring of combitation explained below |
 | agents[restricMoves] | Array[int] | Number of best moves to be explored on every tree level |
 | printMoves | bool | If true, moves will be printed as games are played|
 
